@@ -44,10 +44,13 @@ jobs:
         with:
           gradle-version: '9.3.1'
 
-      - name: Make Gradle Wrapper Executable
+      - name: Validate and Repair Gradle Wrapper
         run: |
-          if [ ! -f gradlew ]; then
-            gradle wrapper
+          # If gradle-wrapper.jar is missing, empty, or corrupt, regenerate it with Gradle 9.3.1
+          if [ ! -f gradle/wrapper/gradle-wrapper.jar ] || [ ! -s gradle/wrapper/gradle-wrapper.jar ] || ! jar tf gradle/wrapper/gradle-wrapper.jar > /dev/null 2>&1; then
+            echo "gradle-wrapper.jar is corrupt or missing. Rebuilding wrapper with Gradle 9.3.1..."
+            rm -f gradle/wrapper/gradle-wrapper.jar
+            gradle wrapper --gradle-version 9.3.1
           fi
           chmod +x gradlew || true
 
@@ -75,7 +78,15 @@ jobs:
           ls -lh debug.keystore
 
       - name: Build Debug APK with Gradle
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        run: |
+          # Try gradlew if the wrapper jar is valid, otherwise use the installed Gradle 9.3.1 directly
+          if [ -f ./gradlew ] && jar tf gradle/wrapper/gradle-wrapper.jar > /dev/null 2>&1; then
+            echo "Building with ./gradlew..."
+            ./gradlew assembleDebug --no-daemon --stacktrace
+          else
+            echo "Wrapper corrupted or missing; building directly with Gradle 9.3.1..."
+            gradle assembleDebug --no-daemon --stacktrace
+          fi
 
       - name: Upload Debug APK Artifact
         uses: actions/upload-artifact@v4

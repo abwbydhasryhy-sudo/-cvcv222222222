@@ -1,0 +1,10 @@
+# Auto-detect text files and perform LF normalization
+* text=auto
+
+# Binary files - prevent Git from corrupting archives and keystores
+*.jar binary
+*.keystore binary
+*.png binary
+*.webp binary
+*.jpg binary
+*.jpeg binary
