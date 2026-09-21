@@ -3,6 +3,7 @@ package com.example.audio
 import android.media.AudioAttributes
 import android.media.AudioFormat
 import android.media.AudioTrack
+import android.media.audiofx.AudioEffect
 import android.media.audiofx.BassBoost
 import android.media.audiofx.Equalizer
 import android.media.audiofx.PresetReverb
@@ -35,31 +36,43 @@ class SoundEffectsHelper {
     if (audioSessionId <= 0) return
     releaseEffects()
 
+    val supportedTypes = try {
+      AudioEffect.queryEffects()?.map { it.type } ?: emptyList()
+    } catch (_: Throwable) {
+      emptyList()
+    }
+
     // Equalizer
-    try {
-      equalizer = Equalizer(0, audioSessionId).apply {
-        enabled = true
+    if (supportedTypes.contains(AudioEffect.EFFECT_TYPE_EQUALIZER)) {
+      try {
+        equalizer = Equalizer(0, audioSessionId).apply {
+          enabled = true
+        }
+      } catch (e: Exception) {
+        Log.w("SoundEffectsHelper", "Equalizer not available on this device: ${e.message}")
       }
-    } catch (e: Exception) {
-      Log.w("SoundEffectsHelper", "Equalizer not available on this device: ${e.message}")
     }
 
     // Bass Boost
-    try {
-      bassBoost = BassBoost(0, audioSessionId).apply {
-        enabled = true
+    if (supportedTypes.contains(AudioEffect.EFFECT_TYPE_BASS_BOOST)) {
+      try {
+        bassBoost = BassBoost(0, audioSessionId).apply {
+          enabled = true
+        }
+      } catch (e: Exception) {
+        Log.w("SoundEffectsHelper", "BassBoost not available on this device: ${e.message}")
       }
-    } catch (e: Exception) {
-      Log.w("SoundEffectsHelper", "BassBoost not available on this device: ${e.message}")
     }
 
     // Preset Reverb
-    try {
-      presetReverb = PresetReverb(0, audioSessionId).apply {
-        enabled = true
+    if (supportedTypes.contains(AudioEffect.EFFECT_TYPE_PRESET_REVERB)) {
+      try {
+        presetReverb = PresetReverb(0, audioSessionId).apply {
+          enabled = true
+        }
+      } catch (e: Exception) {
+        Log.w("SoundEffectsHelper", "PresetReverb not available on this device: ${e.message}")
       }
-    } catch (e: Exception) {
-      Log.w("SoundEffectsHelper", "PresetReverb not available on this device: ${e.message}")
     }
 
     try {

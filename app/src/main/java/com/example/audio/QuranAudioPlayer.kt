@@ -3,11 +3,13 @@ package com.example.audio
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.net.Uri
 import android.media.AudioAttributes as AndroidAudioAttributes
 import android.media.MediaPlayer
 import android.os.Build
 import android.os.Handler
 import android.util.Log
+import java.io.File
 import androidx.annotation.OptIn
 import androidx.core.app.NotificationCompat
 import androidx.media3.common.AudioAttributes
@@ -100,6 +102,20 @@ class QuranAudioPlayer(private val context: Context) {
         out: ArrayList<Renderer>
       ) {
         // Pure Audio Application: Omit video renderers to avoid querying hardware video decoders and graphics system resources
+      }
+
+      override fun buildImageRenderers(
+        out: ArrayList<Renderer>
+      ) {
+        // Pure Audio Application: Omit image decoders
+      }
+
+      override fun buildCameraMotionRenderers(
+        context: Context,
+        extensionRendererMode: Int,
+        out: ArrayList<Renderer>
+      ) {
+        // Pure Audio Application: Omit camera motion
       }
     }.apply {
       setExtensionRendererMode(DefaultRenderersFactory.EXTENSION_RENDERER_MODE_OFF)
@@ -279,6 +295,38 @@ class QuranAudioPlayer(private val context: Context) {
         player.play()
       } catch (e: Exception) {
         Log.w("QuranAudioPlayer", "Error loading ExoPlayer stream: ${e.message}")
+        _state.value = _state.value.copy(isLoading = false, isPlaying = false)
+      }
+    }
+  }
+
+  fun playLocalAudioFile(filePath: String, surah: Surah, reciterName: String) {
+    loadJob?.cancel()
+    _state.value = _state.value.copy(
+      isLoading = true,
+      isPlaying = false,
+      currentSurah = surah,
+      currentPositionSeconds = 0,
+      totalDurationSeconds = surah.durationMinutes * 60
+    )
+    loadJob = scope.launch(Dispatchers.Main) {
+      try {
+        val player = getOrCreateExoPlayer()
+        val mediaItem = MediaItem.Builder()
+          .setUri(Uri.fromFile(File(filePath)))
+          .setMediaMetadata(
+            MediaMetadata.Builder()
+              .setTitle("سورة ${surah.nameArabic}")
+              .setArtist(reciterName)
+              .build()
+          )
+          .build()
+        player.setMediaItem(mediaItem)
+        player.playbackParameters = PlaybackParameters(_state.value.playbackSpeed)
+        player.prepare()
+        player.play()
+      } catch (e: Exception) {
+        Log.e("QuranAudioPlayer", "Error loading local audio file: ${e.message}")
         _state.value = _state.value.copy(isLoading = false, isPlaying = false)
       }
     }

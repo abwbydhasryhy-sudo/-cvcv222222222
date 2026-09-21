@@ -55,4 +55,18 @@ class ExampleRobolectricTest {
     org.junit.Assert.assertEquals(17, state.currentSurah.number)
     player.releaseMediaPlayer()
   }
+
+  @Test
+  fun `verify prayer times and adhan options`() {
+    val context = ApplicationProvider.getApplicationContext<Context>()
+    val adhanManager = com.example.audio.AdhanManager(context)
+    val options = com.example.audio.defaultAdhanOptions
+    org.junit.Assert.assertTrue(options.size >= 5)
+    org.junit.Assert.assertTrue(options.any { it.id == "islam_sobhi" && it.isOffline })
+    org.junit.Assert.assertTrue(options.any { it.id == "makkah" })
+
+    val times = com.example.data.prayer.PrayerTimesCalculator.calculate(21.4225, 39.8262)
+    org.junit.Assert.assertNotNull(times.nextPrayer)
+    org.junit.Assert.assertTrue(times.remainingMillisToNext >= 0L)
+  }
 }

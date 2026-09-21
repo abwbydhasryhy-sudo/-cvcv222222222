@@ -76,6 +76,8 @@ class MainActivity : ComponentActivity() {
       val playbackState by viewModel.playbackState.collectAsState()
       val downloadedSurahs by viewModel.downloadedSurahs.collectAsState()
       val lastRead by viewModel.lastRead.collectAsState()
+      val prayerTimes by viewModel.prayerTimesState.collectAsState()
+      val adhanState by viewModel.adhanState.collectAsState()
 
       val snackbarHostState = remember { SnackbarHostState() }
       val context = LocalContext.current
@@ -162,6 +164,11 @@ class MainActivity : ComponentActivity() {
                       HomeScreen(
                         uiState = uiState,
                         lastRead = lastRead,
+                        prayerTimes = prayerTimes,
+                        adhanState = adhanState,
+                        onPlayAdhan = { viewModel.playAdhan(it) },
+                        onStopAdhan = { viewModel.stopAdhan() },
+                        onSelectAdhanOption = { viewModel.selectAdhanOption(it) },
                         onNavigateTab = { viewModel.setTab(it) },
                         onSelectSurah = { viewModel.selectSurah(it) },
                         onOpenAlerts = { viewModel.toggleAzkarAlertsDialog(true) },
@@ -225,9 +232,14 @@ class MainActivity : ComponentActivity() {
                         onDownloadFullMushaf = { viewModel.downloadFullMushaf(it) },
                         onClearCache = { viewModel.clearCache() },
                         onPlaySurah = { num ->
-                          val s = QuranData.allSurahs.find { it.number == num } ?: QuranData.allSurahs[0]
-                          viewModel.selectSurah(s)
-                          viewModel.audioPlayer.playSurah(s)
+                          val downloaded = downloadedSurahs.find { it.surahNumber == num }
+                          if (downloaded != null) {
+                            viewModel.playDownloadedSurah(downloaded)
+                          } else {
+                            val s = QuranData.allSurahs.find { it.number == num } ?: QuranData.allSurahs[0]
+                            viewModel.selectSurah(s)
+                            viewModel.audioPlayer.playSurah(s)
+                          }
                           viewModel.setTab(ScreenTab.MUSHAF)
                         },
                         onDeleteDownloadedSurah = { viewModel.deleteDownload(it) },
@@ -238,11 +250,15 @@ class MainActivity : ComponentActivity() {
 
                     ScreenTab.QIBLA -> {
                       val qiblaState by viewModel.qiblaState.collectAsState()
-                      QiblaScreen(qiblaState = qiblaState)
+                      QiblaScreen(
+                        qiblaState = qiblaState,
+                        onRefreshLocation = { viewModel.refreshLocation() }
+                      )
                     }
 
                     ScreenTab.MOSQUES -> {
-                      MosquesScreen()
+                      val qiblaState by viewModel.qiblaState.collectAsState()
+                      MosquesScreen(location = qiblaState.location)
                     }
                   }
                 }

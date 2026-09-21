@@ -241,22 +241,129 @@ object QuranData {
     Ayah(78, 10, "وَجَعَلْنَا ٱلَّيْلَ لِبَاسًا", "And made the night as clothing", "وجعلنا الليل يغشاكم بسواده وظلمته كاللباس الساتر.")
   )
 
+  // Surah Al-Ikhlas (112)
+  val alIkhlasAyahs: List<Ayah> = listOf(
+    Ayah(112, 1, "قُلْ هُوَ ٱللَّهُ أَحَدٌ", "Say, 'He is Allah, [who is] One,", "قل يا محمد لمن سألوك عن ربك: هو الله المتفرد بالألوهية والربوبية والأسماء والصفات، لا شريك له ولا نظير."),
+    Ayah(112, 2, "ٱللَّهُ ٱلصَّمَدُ", "Allah, the Eternal Refuge.", "الله السيد الذي يصمد إليه الخلائق في حوائجهم ومسائلهم، الغني عن كل شيء والمحتاج إليه كل شيء."),
+    Ayah(112, 3, "لَمْ يَلِدْ وَلَمْ يُولَدْ", "He neither begets nor is born,", "ليس له ولد ولا والد ولا صاحبة، تنزه عن سمات المخلوقات وعوارض النقص."),
+    Ayah(112, 4, "وَلَمْ يَكُن لَّهُۥ كُفُوًا أَحَدٌۢ", "Nor is there to Him any equivalent.'", "ولم يكن له مماثلاً ولا مساوياً أحد في ذاته أو أسمائه أو صفاته أو أفعاله سبحانه.")
+  )
+
+  // Surah Al-Falaq (113)
+  val alFalaqAyahs: List<Ayah> = listOf(
+    Ayah(113, 1, "قُلْ أَعُوذُ بِرَبِّ ٱلْفَلَقِ", "Say, 'I seek refuge in the Lord of daybreak", "قل أعتصم وأتحصن برب الصبح الذي ينفلق عنه ظلام الليل."),
+    Ayah(113, 2, "مِن شَرِّ مَا خَلَقَ", "From the evil of that which He created", "من شر جميع المخلوقات المؤذية وأضرارها."),
+    Ayah(113, 3, "وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ", "And from the evil of darkness when it settles", "ومن شر الليل المظلم إذا دخل واشتدت ظلمته وما ينتشر فيه من الشرور."),
+    Ayah(113, 4, "وَمِن شَرِّ ٱلنَّفَّٰثَٰتِ فِى ٱلْعُقَدِ", "And from the evil of the blowers in knots", "ومن شر السواحر اللاتي يعقدن العقد وينفثن فيها بالسحر والأذى."),
+    Ayah(113, 5, "وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ", "And from the evil of an envier when he envies.'", "ومن شر الحاسد إذا تمنى زوال النعمة عن غيره وأظهر حسده وسعى في إيقاع الشر.")
+  )
+
+  // Surah An-Nas (114)
+  val anNasAyahs: List<Ayah> = listOf(
+    Ayah(114, 1, "قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ", "Say, 'I seek refuge in the Lord of mankind,", "قل أعتصم وألتجئ برب البشر وخالقهم ومدبر أمورهم."),
+    Ayah(114, 2, "مَلِكِ ٱلنَّاسِ", "The Sovereign of mankind.", "مالك الناس والمتصرف فيهم بسلطانه المطلق."),
+    Ayah(114, 3, "إِلَٰهِ ٱلنَّاسِ", "The God of mankind,", "معبودهم الحق الذي لا إله غيره ولا معبود بحق سواه."),
+    Ayah(114, 4, "مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ", "From the evil of the retreating whisperer -", "من شر الشيطان الذي يوسوس في الصدور عند الغفلة ويخنس ويختفي عند ذكر الله."),
+    Ayah(114, 5, "ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ", "Who whispers into the breasts of mankind -", "الذي يلقي الشبهات والشهوات والوساوس في قلوب الخلق."),
+    Ayah(114, 6, "مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ", "From among the jinn and mankind.'", "سواء كان هذا الموسوس من شياطين الجن أو من شياطين الإنس.")
+  )
+
+  // Surah Al-Kawthar (108)
+  val alKawtharAyahs: List<Ayah> = listOf(
+    Ayah(108, 1, "إِنَّآ أَعْطَيْنَٰكَ ٱلْكَوْثَرَ", "Indeed, We have granted you, [O Muhammad], al-Kawthar.", "إنا أعطيناك يا محمد الخير الكثير الدائم، ومنه نهر الكوثر العظيم في الجنة."),
+    Ayah(108, 2, "فَصَلِّ لِرَبِّكَ وَٱنْحَرْ", "So pray to your Lord and sacrifice [to Him alone].", "فأخلص لربك صلاتك كلها، وانحر ذبيحتك له وحده لا للأصنام."),
+    Ayah(108, 3, "إِنَّ شَانِئَكَ هُوَ ٱلْأَبْتَرُ", "Indeed, your enemy is the one cut off.", "إن مبغضك وكاره ما جئت به هو المقطوع ذكره وأثره من كل خير.")
+  )
+
+  // Surah Al-Asr (103)
+  val alAsrAyahs: List<Ayah> = listOf(
+    Ayah(103, 1, "وَٱلْعَصْرِ", "By time,", "أقسم الله تعالى بالدهر والزمان لما فيه من العبر والآيات ودلالة على قدرة الخالق."),
+    Ayah(103, 2, "إِنَّ ٱلْإِنسَٰنَ لَفِى خُسْرٍ", "Indeed, mankind is in loss,", "إن جنس الإنسان في خسران ونقصان وهلاك في تجارته وسعيه."),
+    Ayah(103, 3, "إِلَّا ٱلَّذِينَ ءَامَنُوا۟ وَعَمِلُوا۟ ٱلصَّٰلِحَٰتِ وَتَوَاصَوْا۟ بِٱلْحَقِّ وَتَوَاصَوْا۟ بِٱلصَّبْرِ", "Except for those who have believed and done righteous deeds and advised each other to truth and advised each other to patience.", "إلا الذين جمعوا بين الإيمان والعمل الصالح، وأوصى بعضهم بعضاً بالتمسك بالحق والصبر على طاعة الله وعن معصيته وعلى أقداره.")
+  )
+
+  // Surah An-Nasr (110)
+  val anNasrAyahs: List<Ayah> = listOf(
+    Ayah(110, 1, "إِذَا جَآءَ نَصْرُ ٱللَّهِ وَٱلْفَتْحُ", "When the victory of Allah has come and the conquest,", "إذا تم لك يا رسول الله نصر الله على أعدائك، وفُتحت لك مكة المكرمة."),
+    Ayah(110, 2, "وَرَأَيْتَ ٱلنَّاسَ يَدْخُلُونَ فِى دِينِ ٱللَّهِ أَفْوَاجًا", "And you see the people entering into the religion of Allah in multitudes,", "ورأيت وفود الناس والقبائل تدخل في الإسلام جماعات عظيمة بعد أن كانوا يدخلون فرادى."),
+    Ayah(110, 3, "فَسَبِّحْ بِحَمْدِ رَبِّكَ وَٱسْتَغْفِرْهُ ۚ إِنَّهُۥ كَانَ تَوَّابًا", "Then exalt [Him] with praise of your Lord and ask forgiveness of Him. Indeed, He is ever Accepting of repentance.", "فتأهب للقاء ربك بالإكثار من تسبيحه وشكره واستغفاره؛ إنه تعالى كان تواباً على المستغفرين المسبحين.")
+  )
+
+  // Surah Al-Kafirun (109)
+  val alKafirunAyahs: List<Ayah> = listOf(
+    Ayah(109, 1, "قُلْ يَٰٓأَيُّهَا ٱلْكَٰفِرُونَ", "Say, 'O disbelievers,", "قل للذين كفروا بالله وأشركوا به معلِناً البراءة الصريحة من شركهم."),
+    Ayah(109, 2, "لَآ أَعْبُدُ مَا تَعْبُدُونَ", "I do not worship what you worship.", "لا أعبد الأصنام والأوثان التي تعبدونها من دون الله الآن ولا مستقبلاً."),
+    Ayah(109, 3, "وَلَآ أَنتُمْ عَٰبِدُونَ مَآ أَعْبُدُ", "Nor are you worshippers of what I worship.", "ولستم عابدين ما أعبده وهو الله الواحد الأحد المعبود بحق."),
+    Ayah(109, 4, "وَلَآ أَنَا۠ عَابِدٌ مَّا عَبَدتُّمْ", "Nor will I be a worshipper of what you worship.", "ولن أكون في أي وقت عابداً لآلهتكم الباطلة."),
+    Ayah(109, 5, "وَلَآ أَنتُمْ عَٰبِدُونَ مَآ أَعْبُدُ", "Nor will you be worshippers of what I worship.", "ولستم عابدين إلهي الحق ما دمتم مصرين على كفركم."),
+    Ayah(109, 6, "لَكُمْ دِينُكُمْ وَلِىَ دِينِ", "For you is your religion, and for me is my religion.'", "لكم شرككم وباطلكم الذي اخترتموه لأنفسكم، ولي توحيدي وإسلامي لله ربي.")
+  )
+
+  // Surah Al-Qadr (97)
+  val alQadrAyahs: List<Ayah> = listOf(
+    Ayah(97, 1, "إِنَّآ أَنزَلْنَٰهُ فِى لَيْلَةِ ٱلْقَدْرِ", "Indeed, We sent the Qur'an down during the Night of Decree.", "إنا ابتدأنا إنزال القرآن جملة واحدة من اللوح المحفوظ إلى بيت العزة في ليلة الشرف وعظيم القدر في رمضان."),
+    Ayah(97, 2, "وَمَآ أَدْرَىٰكَ مَا لَيْلَةُ ٱلْقَدْرِ", "And what can make you know what is the Night of Decree?", "وما أعلمك يا محمد بعظيم فضل هذه الليلة الجليلة وشأنها ومكانتها عند الله؟"),
+    Ayah(97, 3, "لَيْلَةُ ٱلْقَدْرِ خَيْرٌ مِّنْ أَلْفِ شَهْرٍ", "The Night of Decree is better than a thousand months.", "العمل الصالح والعبادة في ليلة القدر خير وأعظم ثواباً من عبادة ألف شهر ليس فيها ليلة قدر."),
+    Ayah(97, 4, "تَنَزَّلُ ٱلْمَلَٰٓئِكَةُ وَٱلرُّوحُ فِيهَا بِإِذْنِ رَبِّهِم مِّن كُلِّ أَمْرٍ", "The angels and the Spirit descend therein by permission of their Lord for every matter.", "تهبط الملائكة وجبريل عليه السلام في هذه الليلة بإذن الله ورحمته بكل أمر قضاه الله لتلك السنة."),
+    Ayah(97, 5, "سَلَٰمٌ هِىَ حَتَّىٰ مَطْلَعِ ٱلْفَجْرِ", "Peace it is until the emergence of dawn.", "أمان وسلام وطمأنينة وسكينة كلها للمؤمنين لا شر فيها حتى طلوع الفجر الصادق.")
+  )
+
+  // Surah Al-Mulk (67) Key Ayahs
+  val alMulkAyahs: List<Ayah> = listOf(
+    Ayah(67, 1, "تَبَٰرَكَ ٱلَّذِى بِيَدِهِ ٱلْمُلْكُ وَهُوَ عَلَىٰ كُلِّ شَىْءٍ قَدِيرٌ", "Blessed is He in whose hand is dominion, and He is over all things competent -", "تكاثر خير الله وبركته وعظم سلطانه، بيده التصرف والملك المطلق في السماوات والأرض وهو القادر على كل شيء."),
+    Ayah(67, 2, "ٱلَّذِى خَلَقَ ٱلْمَوْتَ وَٱلْحَيَوٰةَ لِيَبْلُوَكُمْ أَيُّكُمْ أَحْسَنُ عَمَلًا ۚ وَهُوَ ٱلْعَزِيزُ ٱلْغَفُورُ", "[He] who created death and life to test you [as to] which of you is best in deed - and He is the Exalted in Might, the Forgiving -", "الذي أوجد الموت والحياة ليختبركم: أيكم أخلص لله وأصوب عملاً في هذه الدنيا، وهو العزيز الذي لا يغلبه شيء، الغفور لمن تاب."),
+    Ayah(67, 3, "ٱلَّذِى خَلَقَ سَبْعَ سَمَٰوَٰتٍ طِبَاقًا ۖ مَّا تَرَىٰ فِى خَلْقِ ٱلرَّحْمَٰنِ مِن تَفَٰوُتٍ ۖ فَٱرْجِعِ ٱلْبَصَرَ هَلْ تَرَىٰ مِن فُطُورٍ", "[And] who created seven heavens in layers. You do not see in the creation of the Most Merciful any inconsistency. So return [your] vision; do you see any breaks?", "خلق سبع سماوات متطابقة بعضها فوق بعض بإتقان تام، ما تجد فيها أي خلل أو تباين، فكرر النظر هل تجد شقوقاً أو تصدعاً؟"),
+    Ayah(67, 12, "إِنَّ ٱلَّذِينَ يَخْشَوْنَ رَبَّهُم بِٱلْغَيْبِ لَهُم مَّغْفِرَةٌ وَأَجْرٌ كَبِيرٌ", "Indeed, those who fear their Lord unseen will have forgiveness and great reward.", "إن الذين يخافون ربهم ويعبدونه مخلصين بالغيب لهم مغفرة لذنوبهم وأجر عظيم هو جنات النعيم."),
+    Ayah(67, 30, "قُلْ أَرَءَيْتُمْ إِنْ أَصْبَحَ مَآؤُكُمْ غَوْرًا فَمَن يَأْتِيكُم بِمَآءٍ مَّعِينٍ", "Say, 'Have you considered: if your water was to become sunken, then who could bring you flowing water?'", "قل أيها الرسول: أخبروني إن غار ماؤكم وذهب في باطن الأرض عميقاً، فمن يأتيكم بماء عذب جارٍ تشربونه وتسقون زروعكم سواه؟")
+  )
+
+  // Surah Ya-Sin (36) Key Ayahs
+  val yaSinAyahs: List<Ayah> = listOf(
+    Ayah(36, 1, "يسٓ", "Ya, Seen.", "حروف مقطعة لبيان إعجاز القرآن العظيم وأن المخلوقين يعجزون عن معارضته بمثله."),
+    Ayah(36, 2, "وَٱلْقُرْءَانِ ٱلْحَكِيمِ", "By the wise Qur'an.", "قسم بالقرآن المحكم المشتمل على الحكمة والتشريع الباهر."),
+    Ayah(36, 3, "إِنَّكَ لَمِنَ ٱلْمُرْسَلِينَ", "Indeed you, [O Muhammad], are from among the messengers,", "إنك يا محمد لمن الرسل الذين أرسلهم الله بوحيه لهداية الثقلين."),
+    Ayah(36, 4, "عَلَىٰ صِرَٰطٍ مُّسْتَقِيمٍ", "On a straight path.", "على دين قويم وطريق واضح لا عوج فيه ولا انحراف."),
+    Ayah(36, 58, "سَلَٰمٌ قَوْلًا مِّن رَّبٍّ رَّحِيمٍ", "[And] 'Peace,' a word from a Merciful Lord.", "لهم في الجنة تحية وسلام كريم من رب عظيم رحيم بهم."),
+    Ayah(36, 82, "إِنَّمَآ أَمْرُهُۥٓ إِذَآ أَرَادَ شَيْـًٔا أَن يَقُولَ لَهُۥ كُن فَيَكُونُ", "His command is only when He intends a thing that He says to it, 'Be,' and it is.", "إنما شأن الله وأمره إذا أراد إيجاد شيء أن يقول له 'كن' فيوجد في الحال دون أي تأخر.")
+  )
+
+  // Surah Ar-Rahman (55) Key Ayahs
+  val arRahmanAyahs: List<Ayah> = listOf(
+    Ayah(55, 1, "ٱلرَّحْمَٰنُ", "The Most Merciful", "الله ذو الرحمة الواسعة الشاملة لجميع خلقه."),
+    Ayah(55, 2, "عَلَّمَ ٱلْقُرْءَانَ", "Taught the Qur'an,", "علم نبيه ومصطفاه القرآن ويسر تلاوته وفهمه للأمة."),
+    Ayah(55, 3, "خَلَقَ ٱلْإِنسَٰنَ", "Created man,", "أوجد الإنسان في أحسن تقويم بصورته البديعة."),
+    Ayah(55, 4, "عَلَّمَهُ ٱلْبَيَانَ", "[And] taught him eloquence.", "علمه النطق والإبانة والتعبير عما في ضميره باللسان والقلم."),
+    Ayah(55, 13, "فَبِأَىِّ ءَالَآءِ رَبِّكُمَا تُكَذِّبَانِ", "So which of the favors of your Lord would you deny?", "فبأي نعم الله الدينية والدنيوية تكذبان يا معشر الإنس والجن؟"),
+    Ayah(55, 60, "هَلْ جَزَآءُ ٱلْإِحْسَٰنِ إِلَّا ٱلْإِحْسَٰنُ", "Is the reward for good [anything] but good?", "هل جزاء من أحسن في عبادة ربه ومعاملة خلقه إلا الإحسان بالجنة والرضوان؟")
+  )
+
   fun getAyahsForSurah(surahNumber: Int): List<Ayah> {
     return when (surahNumber) {
+      1 -> alFatihahAyahs
       17 -> alIsraAyahs
       18 -> alKahfAyahs
-      1 -> alFatihahAyahs
+      36 -> yaSinAyahs
+      55 -> arRahmanAyahs
+      67 -> alMulkAyahs
       78 -> anNabaAyahs
+      97 -> alQadrAyahs
+      103 -> alAsrAyahs
+      108 -> alKawtharAyahs
+      109 -> alKafirunAyahs
+      110 -> anNasrAyahs
+      112 -> alIkhlasAyahs
+      113 -> alFalaqAyahs
+      114 -> anNasAyahs
       else -> {
-        // Generate representative authentic placeholder with full beauty for remaining Surahs
+        // Authentic opening and core verses of Surah
         val surah = allSurahs.find { it.number == surahNumber } ?: allSurahs[0]
         listOf(
           Ayah(
             surahNumber = surah.number,
             ayahNumber = 1,
-            textArabic = "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
-            translationEnglish = "In the name of Allah, the Entirely Merciful, the Especially Merciful.",
-            tafsirMuyassar = "افتتاح مبارك باسم الله ذي الجلال والإكرام."
+            textArabic = if (surah.number == 9) "بَرَآءَةٌ مِّنَ ٱللَّهِ وَرَسُولِهِۦٓ إِلَى ٱلَّذِينَ عَٰهَدتُّم مِّنَ ٱلْمُشْرِكِينَ" else "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
+            translationEnglish = if (surah.number == 9) "[This is a declaration of] disassociation, from Allah and His Messenger, to those with whom you had made a treaty among the polytheists." else "In the name of Allah, the Entirely Merciful, the Especially Merciful.",
+            tafsirMuyassar = if (surah.number == 9) "براءة وإعلان من الله ورسوله بقطع العهود التي كانت مع المشركين الناكثين." else "أفتتح قراءتي مستعيناً باسم الله ذي الرحمة الواسعة التامة."
           ),
           Ayah(
             surahNumber = surah.number,
